@@ -1,0 +1,175 @@
+/*  YES PAGE CONTAINER  */
+.yes-container {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  padding: 20px; 
+  box-sizing: border-box;
+}
+
+/*  FLOATING HEARTS  */
+.heart-bg::before,
+.heart-bg::after {
+  content: "💖 💕 💘 💓 💗";
+  font-size: 30px; 
+  position: absolute;
+  width: 100%;
+  animation: floatHearts 10s linear infinite;
+  opacity: 0.3;
+}
+
+.heart-bg::after {
+  animation-delay: 5s;
+}
+
+@keyframes floatHearts {
+  from {
+    top: 100%;
+  }
+  to {
+    top: -10%;
+  }
+}
+
+/*  MAIN CARD  */
+.yes-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  padding: 40px 50px;
+  border-radius: 25px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  animation: popIn 1s ease;
+  max-width: 500px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*  HEADERS  */
+.yes-card h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.yes-card h2 {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+/*  YES BOX  */
+.yes-box {
+  background: rgba(255,255,255,0.2);
+  padding: 12px;
+  border-radius: 15px;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+/*  LOVE QUOTES  */
+.love-quotes {
+  font-style: italic;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/*  MEMORABLE LINE  */
+.memorable-line {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  animation: popIn 1s ease;
+}
+
+/*  BUTTON  */
+.love-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  color: #ff416c;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+
+/*  MEDIA QUERIES  */
+@media (max-width: 768px) {
+  .yes-card {
+    padding: 30px 25px;
+  }
+
+  .yes-card h1 {
+    font-size: 28px;
+  }
+
+  .yes-card h2 {
+    font-size: 20px;
+  }
+
+  .yes-box, .love-quotes {
+    font-size: 14px;
+  }
+
+  .love-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .heart-bg::before,
+  .heart-bg::after {
+    font-size: 24px;
+  }
+
+  .memorable-line {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .yes-card {
+    padding: 25px 15px;
+  }
+
+  .yes-card h1 {
+    font-size: 24px;
+  }
+
+  .yes-card h2 {
+    font-size: 18px;
+  }
+
+  .yes-box, .love-quotes {
+    font-size: 13px;
+  }
+
+  .love-btn {
+    font-size: 13px;
+    padding: 8px 18px;
+  }
+
+  .memorable-line {
+    font-size: 0.95rem;
+  }
+}

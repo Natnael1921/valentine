@@ -10,7 +10,7 @@ export default function Greeting({ next }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        Hi {name} 💖
+        YOOOOOOO... {name} 💖
       </motion.h1>
 
       <motion.p
