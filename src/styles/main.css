@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #ff9a9e, #ff2e63, #3b1c5a);
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+
+/* FULL SCREEN CENTER */
+.screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* GREETING PAGE */
+.greeting h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+
+.greeting p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* GLOW BUTTON */
+.btn-glow {
+  margin-top: 30px;
+  padding: 16px 40px;
+  border-radius: 50px;
+  border: 2px solid rgb(239, 189, 189);
+  background: linear-gradient(45deg, #ff4d6d, #ff85a2);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff4d6d;
+  transition: 0.3s;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 40px #ff85a2;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .greeting h1 {
+    font-size: 2rem;
+  }
+  .greeting p {
+    font-size: 1rem;
+  }
+  .btn-glow {
+    padding: 14px 30px;
+    font-size: 1rem;
+  }
+}
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hearts span {
+  position: absolute;
+  bottom: -20px;
+  font-size: 24px;
+  animation: float 8s linear infinite;
+  opacity: 0.6;
+}
+
+.hearts span:nth-child(odd) {
+  left: 20%;
+  animation-duration: 10s;
+}
+.hearts span:nth-child(even) {
+  left: 70%;
+  animation-duration: 12s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
