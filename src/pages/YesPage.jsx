@@ -7,30 +7,39 @@ export default function YesPage() {
     confetti({
       particleCount: 200,
       spread: 120,
-      origin: { y: 0.6 },
+      origin: { y: 0.6 }
     });
   }, []);
-const name = import.meta.env.VITE_MY_NAME
+
   return (
     <div className="yes-container">
       <div className="heart-bg"></div>
 
       <div className="yes-card">
-        <h1>💖 SHE SAID YES 💖</h1>
-        <p>My favorite person confirmed...</p>
-        <h2>Let’s make this Valentine’s unforgettable 💕</h2>
+        <h1 className="fade-in">💖 SHE SAID YES 💖</h1>
+        <p className="fade-in delay-1">My favorite person confirmed...</p>
 
-        <div className="yes-box">
-          <span>💑</span>
-          <p>Already taken by {name} — no refunds 😜</p>
+        <h2 className="fade-in delay-2">
+          Relationship status: Taken by you ❤️
+        </h2>
+
+        <div className="yes-box fade-in delay-3">
+          <span>💍</span>
+          <p>Officially taken by YADEL 😌</p>
         </div>
 
-        <div className="love-quotes">
+        <p className="memorable-line fade-in delay-4">
+          We are going to make this Valentine unforgettable 💞
+        </p>
+
+        <div className="love-quotes fade-in delay-5">
           <p>“You are my today and all of my tomorrows.”</p>
           <p>“I found my favorite person.”</p>
         </div>
 
-        <button className="love-btn">Our Story Will Continue 💕</button>
+        <button className="love-btn fade-in delay-6">
+          Our Story Continues 💕
+        </button>
       </div>
     </div>
   );
