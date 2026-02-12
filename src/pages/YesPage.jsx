@@ -34,7 +34,6 @@ export default function YesPage() {
 
         <div className="love-quotes fade-in delay-5">
           <p>“You are my today and all of my tomorrows.”</p>
-          <p>“I found my favorite person.”</p>
         </div>
 
         <button className="love-btn fade-in delay-6">

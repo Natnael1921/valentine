@@ -15,7 +15,7 @@ export default function Questions({ next }) {
       spread: 120,
       origin: { y: 0.6 },
       scalar: 1.2,
-      colors: ["#ff2d55", "#ff6f91", "#ffc1cc"]
+      colors: ["#ff2d55", "#ff6f91", "#ffc1cc"],
     });
   };
 
@@ -73,10 +73,10 @@ export default function Questions({ next }) {
       : "Hmm that's wrong 😏 but still cute";
 
     // Show her answer
-    setMessages(prev => [...prev, { from: "her", text: answer }]);
+    setMessages((prev) => [...prev, { from: "her", text: answer }]);
     setTyping(true);
 
-    //  Typing delay
+    // Typing delay
     setTimeout(() => {
       if (isCorrect) {
         heartExplosion();
@@ -85,9 +85,19 @@ export default function Questions({ next }) {
         playWrong();
       }
 
-      setMessages(prev => [
+      // Show feedback
+      setMessages((prev) => [
         ...prev,
-        { from: "me", text: feedback, wrong: !isCorrect }
+        { from: "me", text: feedback, wrong: !isCorrect },
+        // If wrong, show the correct answer
+        ...(!isCorrect
+          ? [
+              {
+                from: "me",
+                text: `You know the correct answer is "${questions[index].correct}" 😏`,
+              },
+            ]
+          : []),
       ]);
 
       setTyping(false);
@@ -97,16 +107,15 @@ export default function Questions({ next }) {
         if (index < questions.length - 1) {
           const nextIndex = index + 1;
           setIndex(nextIndex);
-          setMessages(prev => [
+          setMessages((prev) => [
             ...prev,
-            { from: "me", text: questions[nextIndex].q }
+            { from: "me", text: questions[nextIndex].q },
           ]);
           setLocked(false);
         } else {
           setTimeout(next, 1500);
         }
       }, 1200);
-
     }, 3000); // 3 sec typing delay
   };
 

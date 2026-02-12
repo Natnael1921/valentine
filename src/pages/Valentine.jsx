@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Valentine({ next }) {
   const name = import.meta.env.VITE_NAME || "name";
   const [noCount, setNoCount] = useState(0);
   const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [yesScale, setYesScale] = useState(1);
 
   const messages = [
     "Are you sure? 🥺",
@@ -19,6 +20,10 @@ export default function Valentine({ next }) {
     const x = Math.random() * 200 - 100;
     const y = Math.random() * 200 - 100;
     setPos({ x, y });
+
+    //  YES button grow for 0.3s
+    setYesScale(1.5);
+    setTimeout(() => setYesScale(1), 300);
   };
 
   return (
@@ -35,6 +40,7 @@ export default function Valentine({ next }) {
       <div className="val-buttons">
         <motion.button
           className="btn-yes"
+          animate={{ scale: yesScale }}
           whileHover={{ scale: 1.2 }}
           onClick={next}
         >
